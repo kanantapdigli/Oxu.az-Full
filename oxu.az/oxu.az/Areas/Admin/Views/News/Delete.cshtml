@@ -1,0 +1,74 @@
+﻿@model oxu.az.Models.News
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<div class="container">
+<h1>XƏBƏRİN SİLİNMƏSİ</h1>
+
+<h3>Silmək istədiyinizə əminsiniz?</h3>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Category.Id)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FileName)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="~/images/@Model.FileName" alt="@Model.FileName" class="w-75" />
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd class = "col-sm-10" style="word-break:break-all">
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Like)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Like)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Unlike)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Unlike)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.View)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.View)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreationTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreationTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.isMain)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.isMain)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> 
+        <a asp-action="Index">Siyahıya Qayıt</a>
+    </form>
+</div>

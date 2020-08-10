@@ -1,0 +1,78 @@
+﻿@model oxu.az.Models.News
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 col-lg-2 d-none d-sm-block">
+            <div class="when position-fixed">
+                <div class="date">
+                    <span class="date-day">@Model.CreationTime.Day</span>
+                    @{
+                        String monthName = Microsoft.VisualBasic.DateAndTime.MonthName(@Model.CreationTime.Month).Substring(0,3);
+                    }
+                    <span class="date-month">@monthName</span>
+                    <p class="date-year">@Model.CreationTime.Year</p>
+                </div>
+                <div class="time text-center">
+                    @Model.CreationTime.ToString("HH:mm")
+                </div>
+                <div class="view text-center">
+                    <i class="fas fa-eye mr-1"></i>
+                    <span>@Model.View</span>
+                </div>
+            </div>
+            <div class="stats stats-func position-fixed" id="@Model.Id">
+                <div class="like-stat">
+                    <i class="fas fa-thumbs-up like-icon"></i>
+                    <span class="like-count">@Model.Like</span>
+                </div>
+                <div class="unlike-stat">
+                    <i class="fas fa-thumbs-down unlike-icon"></i>
+                    <span class="unlike-count">@Model.Unlike</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-8">
+            <img src="~/images/@Model.FileName" alt="" class="news-img">
+            <div class="when when-news position-absolute d-block d-sm-none">
+                <div class="date">
+                    <p>@Model.CreationTime.Day</p>
+                    <p>@monthName</p>
+                </div>
+                <div class="time text-center">
+                    <p>
+                        @Model.CreationTime.ToString("HH:mm")
+                    </p>
+                </div>
+            </div>
+
+            <div class="row mt-3 stats-mobile  stats-func d-flex d-sm-none" id="@Model.Id">
+                <div class="col-4 text-center pr-0">
+                    <div class="like-stat pt-2 pb-2 stat">
+                        <i class="fas fa-thumbs-up news-like" ></i>
+                        <span class="like-count">@Model.Like</span>
+                    </div>
+                </div>
+                <div class="col-4 text-center pr-0 pl-0">
+                    <div class="unlike-stat pt-2 pb-2 stat ">
+                        <i class="fas fa-thumbs-down  news-unlike"></i>
+                        <span class="unlike-count">@Model.Unlike</span>
+                    </div>
+                </div>
+                <div class="col-4 text-center pl-0">
+                    <div class="news-view  pt-2 pb-2 stat">
+                        <i class="fas fa-eye"></i>
+                        <span>@Model.View</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="news-title">
+               @Model.Title
+            </div>
+
+            <div class="news-text">
+             @Model.Content
+            </div>
+        </div>
+    </div>
+</div>

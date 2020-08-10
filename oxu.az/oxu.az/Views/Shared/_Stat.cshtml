@@ -1,0 +1,130 @@
+﻿<script>
+        $(document).on("click", ".like", function () {
+
+
+            var element = $(this)
+
+            $(this).css({
+                "background-color": "white",
+                "color": "#028F1D"
+            })
+
+            $(this).parent().parent().css("pointer-events", "none");
+
+
+            var data = {
+                NewsId: $(this).parent().parent().parent().parent().attr("id")
+            }
+
+            $.ajax({
+                url: "@Url.Action("Like","News")",
+                data: data,
+                success: function (data) {
+                    $(element).children().eq(1).text(data);
+                }
+            })
+
+        })
+
+        $(document).on("click", ".unlike", function () {
+
+            var element = $(this);
+
+
+            $(this).css({
+                "background-color": "white",
+                "color": "#DE0201"
+            })
+
+            $(this).parent().parent().css("pointer-events", "none");
+
+            var data = {
+                NewsId: $(this).parent().parent().parent().parent().attr("id")
+            }
+
+
+            $.ajax({
+                url: "@Url.Action("Unlike","News")",
+                data: data,
+                success: function (data) {
+                    $(element).children().eq(1).text(data);
+                }
+            })
+
+        })
+
+        $(document).on("click", ".news-item a", function () {
+
+            var element = $(this);
+
+            var data = {
+                NewsId: $(this).parent().attr("id")
+            }
+
+            $.ajax({
+                url: "@Url.Action("View","News")",
+                data: data,
+                success: function (data) {
+                    $(element).siblings().children().children().eq(2).children().children().eq(1).text(data);
+                }
+            })
+        })
+
+        $(document).on("click", ".news-featured", function () {
+
+            var element = $(this);
+
+            var data = {
+                NewsId: $(this).attr("id")
+            }
+
+            $.ajax({
+                url: "@Url.Action("View","News")",
+                data: data,
+                success: function (data) {
+                    $(element).children().eq(1).children().children().eq(2).text(data);
+                }
+            })
+        })
+
+         $(document).on("click", ".like-stat", function () {
+
+        $(".like-stat").css("box-shadow", "inset 0 0 5px black")
+
+        $(".stats-func").css("pointer-events", "none");
+
+         var data = {
+                NewsId: $(".stats-func").attr("id")
+            }
+
+            $.ajax({
+                url: "@Url.Action("Like","News")",
+                data: data,
+                success: function (data) {
+                    $(".like-count").text(data)
+                }
+            })
+
+
+         })
+
+    $(document).on("click", ".unlike-stat", function () {
+
+        $(".unlike-stat").css("box-shadow", "inset 0 0 5px black")
+
+        $(".stats-func").css("pointer-events", "none");
+
+        var data = {
+                NewsId: $(".stats-func").attr("id")
+            }
+
+            $.ajax({
+                url: "@Url.Action("Unlike","News")",
+                data: data,
+                success: function (data) {
+                    $(".unlike-count").text(data)
+                }
+            })
+
+        })
+</script>

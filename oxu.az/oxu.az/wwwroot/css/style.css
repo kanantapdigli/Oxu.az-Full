@@ -1,0 +1,525 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+body {
+    overflow: hidden;
+}
+
+.fixed{
+    position: fixed;
+    top:0;
+    z-index: 999;
+    width: 100%;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+}
+
+ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+p {
+    margin-bottom: 0 !important;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+    a:hover {
+        text-decoration: none !important;
+        color: white;
+    }
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 940px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .arrow {
+        font-size: 50px !important;
+    }
+
+    .title {
+        bottom: 0 !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .arrow {
+        font-size: 40px !important;
+    }
+
+    .arrow-right {
+        right: 20px !important;
+    }
+
+    .arrow-left {
+        left: 20px !important;
+    }
+
+    .lent .title {
+        bottom: 0 !important;
+    }
+
+        .lent .title .title-date {
+            font-size: 15px !important;
+        }
+
+        .lent .title .title-text {
+            font-size: 16px !important;
+        }
+}
+
+@media screen and (max-width: 576px) {
+    .arrow {
+        font-size: 30px !important;
+    }
+
+    .arrow-right {
+        right: 15px !important;
+    }
+
+    .arrow-left {
+        left: 15px !important;
+    }
+
+    .burger-menu {
+        max-width: 100% !important;
+    }
+}
+
+.preloader-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 999;
+    background-color: white;
+}
+
+    .preloader-container .preloader {
+        position: absolute;
+        top: 45%;
+        left: 48%;
+    }
+
+
+header {
+    top: -150px;
+    transition: top 0.5s;
+}
+
+
+header .header-top {
+    height: auto;
+    padding: 8px;
+}
+
+    header .header-top .bar {
+        color: white;
+        font-size: 20px;
+    }
+
+    .bar-scroll{
+        display: none;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        z-index: -1;
+    }
+
+    header .header-top .about,
+    header .header-top .reklam {
+        margin-right: 25px;
+        line-height: 22px;
+    }
+
+    header .header-top .icon {
+        margin-left: 22px;
+        font-size: 20px;
+    }
+
+    header .header-top .search-input {
+        background-color: transparent;
+        border: 1px solid #dddddd;
+        padding: 5px 34px 5px 5px;
+        margin-left: 20px;
+        outline: none;
+        color: white;
+        width: 100%;
+    }
+
+    header .header-top .search-icon {
+        color: white;
+        margin-left: -34px;
+        cursor: pointer;
+    }
+
+
+    nav{
+        position: relative;
+        transition: 0.5s; 
+    }
+
+header nav .nav-top,
+header nav .nav-center {
+    background-color: #222222;
+}
+
+    header nav .nav-top div a:hover
+     {
+        background-color: #454545;
+    }
+
+    header nav .nav-top div a
+    {
+        display: inline-block;
+        color: white;
+        padding: 0px 10px;
+        margin-right: 10px;
+        line-height: 45px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+        header nav .nav-top div a
+        {
+            -webkit-transition: .3s all linear;
+            transition: .3s all linear;
+        }
+
+header nav .nav-bottom {
+    background-color: #EDEDED;
+    -webkit-box-shadow: 0px 1px 5px black;
+    box-shadow: 0px 1px 5px black;
+}
+
+    header nav .nav-bottom a {
+        width: 100%;
+        display: inline-block;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    header nav .nav-bottom .az-corona {
+        background-color: pink;
+        color: red;
+        -webkit-transition: .3s all linear;
+        transition: .3s all linear;
+    }
+
+        header nav .nav-bottom .az-corona:hover {
+            background-color: transparent;
+        }
+
+    header nav .nav-bottom .corona-online {
+        background-color: orange;
+        -webkit-transition: .3s all linear;
+        transition: .3s all linear;
+    }
+
+        header nav .nav-bottom .corona-online:hover {
+            background-color: transparent;
+            color: black;
+        }
+
+    header nav .nav-bottom .all-news {
+        color: black;
+    }
+
+.frame {
+    width: 100%;
+    height: 100%;
+}
+
+    .frame .lent {
+        right: 0;
+        -webkit-transition: .3s all linear;
+        transition: .3s all linear;
+        height: 100%;
+    }
+
+        .frame .lent img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            max-width: 100%;
+        }
+
+        .frame .lent .title {
+            position: absolute;
+            bottom: 35px;
+            word-break: break-all;
+        }
+
+            .frame .lent .title .title-date {
+                padding: 7px 20px 7px 20px;
+                background-color: rgba(24, 148, 160, 0.8);
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                display: inline-block;
+            }
+
+            .frame .lent .title .title-text {
+                display: block;
+                padding: 7px 0 7px 20px;
+                background-color: rgba(0, 0, 0, 0.8);
+                font-size: 21px;
+                font-weight: bold;
+                color: white;
+            }
+
+.arrow {
+    top: 48%;
+    color: white;
+    font-size: 60px;
+    text-shadow: -1px 0px 10px black;
+    cursor: pointer;
+}
+
+.arrow-left {
+    left: 30px;
+}
+
+.arrow-right {
+    right: 30px;
+}
+
+.main-bottom .item-photo {
+    height: 225px;
+    width: 100%;
+}
+
+    .main-bottom .item-photo img {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .main-bottom .item-photo .when {
+        opacity: 0.9;
+        top: 0;
+    }
+
+        .main-bottom .item-photo .when .date {
+            padding: 5px;
+            background-color: #1894A0;
+            font-size: 16px;
+        }
+
+.main-bottom .item-title {
+    height: 150px;
+    padding: 15px 20px 25px 20px;
+    border: 1px solid #dddddd;
+    color: #13317F;
+    font-weight: bold;
+    font-size: 19px;
+    word-break: break-all;
+}
+
+.main-bottom .like,
+.main-bottom .unlike,
+.main-bottom .view {
+    border: 1px solid #dddddd;
+    background-color: #F2F2F2;
+    color: #999999;
+}
+
+.main-bottom .like,
+.main-bottom .unlike {
+    cursor: pointer;
+}
+
+    .main-bottom .like:hover {
+        background-color: #028F1D;
+        color: white;
+    }
+
+    .main-bottom .unlike:hover {
+        background-color: #DE0201;
+        color: white;
+    }
+
+main .news-img {
+    max-width: 100%;
+    width: 100%;
+}
+
+main .news-title {
+    margin: 15px 0 5px;
+    font-size: 32px;
+    color: #13317F;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+main .news-like {
+    color: #028F1D;
+}
+
+main .news-unlike {
+    color: #DE0201;
+}
+
+main .news-view {
+    color: grey;
+}
+
+main .news-text {
+    word-break: break-all;
+}
+
+
+main .when-news {
+    top: 0;
+}
+
+main .when {
+    opacity: 0.9;
+}
+
+    main .when .date {
+        padding: 15px 30px;
+        background-color: #1894A0;
+        font-size: 18px;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    main .when .time {
+        padding: 5px 15px;
+        background-color: #334564;
+        font-size: 17px;
+        font-weight: bold;
+        color: white;
+    }
+
+    main .when .view {
+        color: #757575;
+        background-color: #f2f2f2;
+        padding: 10px 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+main .stats {
+    top: 400px;
+}
+
+    main .stats div {
+        border: 1px solid #dddddd;
+        padding: 15px 37px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+        main .stats div .like-icon {
+            color: #028F1D;
+        }
+
+        main .stats div .unlike-icon {
+            color: #DE0201;
+        }
+
+main .stats-mobile .stat {
+    border: 1px solid #dddddd;
+}
+
+main .stats-mobile .like {
+    color: #028F1D;
+}
+
+main .stats-mobile .unlike {
+    color: #DE0201;
+}
+
+.burger-menu {
+    position: absolute;
+    top: 96px;
+    left: -230px;
+    width: 230px;
+    z-index: 999;
+    -webkit-transition: .3s all ease-out;
+    transition: .3s all ease-out;
+    visibility: hidden;
+}
+
+    .burger-menu .nav-item {
+        width: 100%;
+        display: block;
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    }
+/*# sourceMappingURL=style.css.map */

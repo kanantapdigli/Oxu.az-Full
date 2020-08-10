@@ -1,0 +1,93 @@
+﻿@model HomeIndexViewModel
+
+<div class="main-top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="frame overflow-hidden position-relative">
+                    <div class="lent d-flex position-relative">
+                        @foreach (var News in Model.FeaturedNews)
+                        {
+                            <a href="@Url.Action("News","Home",new { Id = News.Id })" id="@News.Id" class="news-featured" target="_blank">
+                                <img src="~/images/@News.FileName" alt="">
+
+                                <div class="title">
+                                    <div class="title-date">
+                                        @{
+                                            String monthName = Microsoft.VisualBasic.DateAndTime.MonthName(News.CreationTime.Month).Substring(0, 3);
+                                        }
+                                        <span class="day">@News.CreationTime.Day @monthName</span>
+                                        <span class="time ml-3">@News.CreationTime.ToString("HH:mm")</span>
+                                        <span class="views ml-3">@News.View</span>
+                                    </div>
+                                    <div class="title-text">
+                                        @News.Title
+                                    </div>
+                                </div>
+                            </a>
+                        }
+                    </div>
+                    <i class="fas fa-chevron-left position-absolute arrow arrow-left"></i>
+                    <i class="fas fa-chevron-right position-absolute arrow arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-bottom mt-3">
+    <div class="container">
+        <div class="row">
+            @foreach (var News in Model.GeneralNews)
+            {
+            <div class="col-12 col-md-6 col-lg-4 pt-4">
+                <div class="news-item" id="@News.Id">
+                    <a href="@Url.Action("News","Home",new {Id = News.Id })" target="_blank">
+                        <div class="item-photo position-relative">
+                            <img src="~/images/@News.FileName" alt="@News.FileName" class="w-100"/>
+                            <div class="when position-absolute">
+                                <div class="date">
+                                    <p>@News.CreationTime.Day</p>
+                                    @{
+                                        String monthName = Microsoft.VisualBasic.DateAndTime.MonthName(News.CreationTime.Month).Substring(0, 3);
+                                    }
+                                    <p>@monthName</p>
+                                </div>
+                                <div class="time">
+                                    <p>@News.CreationTime.ToString("HH:mm")</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item-title">
+                          @News.Title
+                        </div>
+                    </a>
+                    <div class="item-stats">
+                        <div class="row">
+                            <div class="col-4 pr-0  text-center">
+                                <div class="like pt-2 pb-2">
+                                    <i class="fas fa-thumbs-up"></i>
+                                    <span>@News.Like</span>
+                                </div>
+                            </div>
+                            <div class="col-4 pl-0 pr-0 text-center">
+                                <div class="unlike  pt-2 pb-2">
+                                    <i class="fas fa-thumbs-down"></i>
+                                    <span>@News.Unlike</span>
+                                </div>
+                            </div>
+                            <div class="col-4 pl-0 text-center">
+                                <div class="view  pt-2 pb-2">
+                                    <i class="fas fa-eye"></i>
+                                    <span>@News.View</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+
